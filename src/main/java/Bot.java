@@ -49,9 +49,14 @@ public class Bot extends TelegramLongPollingBot {
         String response;
 
         if(textMsg.equals("/start"))
-            response = "Приветствую, выбери проверку, которую хочешь проверить. Жми /get";
-        else if(textMsg.equals("/get"))
-            response = storage.getAssert();
+            response = "Привет! :)\n\n" +
+                    "Получи рандомную проверку, которую можно применить для написания тестовых сценариев!\n\n " +
+                    "1. Жми /LineTesting для проверок поля. \n " +
+                    "2. Жми /RegisterFormAssert для проверок формы регистрации \n ";
+        else if(textMsg.equals("/LineTesting"))
+            response = storage.getAssertLine();
+        else if(textMsg.equals("/RegisterFormAssert"))
+            response = String.valueOf(storage.registerFormValue.getAssertRegistration());
         else
             response = "Сообщение не распознано";
 
