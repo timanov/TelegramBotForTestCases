@@ -1,0 +1,60 @@
+import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.objects.Message;
+import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
+public class Bot extends TelegramLongPollingBot {
+    final private String BOT_TOKEN = "5532935508:AAHYxI5beyRIaCPektSyQHReqpok6l-GncY";
+    final private String BOT_NAME = "MishkaCitatyBot";
+    Storage storage;
+
+    Bot()
+    {
+        storage = new Storage();
+    }
+
+    @Override
+    public String getBotUsername() {
+        return BOT_NAME;
+    }
+
+    @Override
+    public String getBotToken() {
+        return BOT_TOKEN;
+    }
+
+    @Override
+    public void onUpdateReceived(Update update) {
+        if(update.hasMessage() && update.getMessage().hasText()){
+            Message inMess = update.getMessage();
+            String chatId = inMess.getChatId().toString();
+            String response = parseMessage(inMess.getText());
+            SendMessage outMess = new SendMessage();
+
+            // Добавляем в наше сообщение id чата а также ответ
+            outMess.setChatId(chatId);
+            outMess.setText(response);
+
+            //Отправка в чат
+            try {
+                execute(outMess);
+            } catch (TelegramApiException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    private String parseMessage(String textMsg) {
+        String response;
+
+        if(textMsg.equals("/start"))
+            response = "Приветствую, выбери проверку, которую хочешь проверить. Жми /get";
+        else if(textMsg.equals("/get"))
+            response = storage.getAssert();
+        else
+            response = "Сообщение не распознано";
+
+        return response;
+    }
+}
