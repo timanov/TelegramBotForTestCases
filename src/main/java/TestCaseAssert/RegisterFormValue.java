@@ -12,28 +12,26 @@ public class RegisterFormValue {
     private static final String SIX = "6. Поля передаются в запросе.";
     private static final String SEVEN = "7. Проверка валидации обязательных полей.";
     private static final String EIGHT = "8. Проверка валидации обязательных полей.";
-    private ArrayList<String> Register;
-    int value = 0;
+    private ArrayList<String> register;
+    private int value = 0;
 
-    public ArrayList<String> fillRegister() {
-        Register = new ArrayList<>();
-        Register.add(ONE);
-        Register.add(TWO);
-        Register.add(THREE);
-        Register.add(FOUR);
-        Register.add(FIVE);
-        Register.add(SIX);
-        Register.add(SEVEN);
-        Register.add(EIGHT);
-
-        return Register;
+    public void fillRegister() {
+        register = new ArrayList<>();
+        register.add(ONE);
+        register.add(TWO);
+        register.add(THREE);
+        register.add(FOUR);
+        register.add(FIVE);
+        register.add(SIX);
+        register.add(SEVEN);
+        register.add(EIGHT);
     }
 
     public String getAssertRegistration(){
-        if (value == Register.size()){
+        if (value == register.size()){
             value = 0;
         }
-        String result = Register.get(value);
+        String result = register.get(value);
         value++;
         return result;
     }
