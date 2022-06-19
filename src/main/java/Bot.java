@@ -63,6 +63,7 @@ public class Bot extends TelegramLongPollingBot {
                 break;
             default:
                 response = "Сообщение не распознано";
+                System.out.println("The user wrote an incorrect message : " + textMsg);
                 break;
         }
 
