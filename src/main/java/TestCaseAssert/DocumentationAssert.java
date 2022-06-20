@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import static Controller.ControllerForCase.DOCUMENTATIONASSERT;
 
 public class DocumentationAssert implements BaseAssert{
-    private final String MESSAGE = "\nНажми " + DOCUMENTATIONASSERT + " чтобы получить следующую проверку.";
+    private final String MESSAGEGENERATETSTEP = "\n\nНажми /GenerateAssertStep для генерации шага для вставки в тест-кейс";
+    private final String MESSAGE = "\n\nНажми " + DOCUMENTATIONASSERT + " чтобы получить следующую проверку.";
     private final String ONE = "1. User story - небольшая изолированная единица функцоинальности" +
             "которую можно продемонстрировать.";
     private final String TWO = "2. User story написана в формате Как <роль пользователя>, я хочу <что-то>, " +
@@ -25,8 +26,8 @@ public class DocumentationAssert implements BaseAssert{
     @Override
     public void fillRegister() {
         documentation = new ArrayList<>();
-        documentation.add(ONE + MESSAGE);
-        documentation.add(TWO + MESSAGE);
+        documentation.add(ONE + MESSAGE + MESSAGEGENERATETSTEP);
+        documentation.add(TWO + MESSAGE + MESSAGEGENERATETSTEP);
         documentation.add(THREE + MESSAGE);
         documentation.add(FOUR + MESSAGE);
         documentation.add(FIVE + MESSAGE);
