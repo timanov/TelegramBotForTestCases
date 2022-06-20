@@ -75,6 +75,13 @@ public class Bot extends TelegramLongPollingBot {
             case CAT:
                 response = "Котика пока неть :c";
                 break;
+            case GENERATESTEPFORCASE:
+                if (storage.documentationAssert.getValue() == 0) {
+                    response = "Сначала укажи выберите тип проверок, нажми " + START + " чтобы попасть в главное меню.";
+                } else {
+                    response = String.valueOf(storage.documentationAssert.getTestStepForCase());
+                }
+                break;
             default:
                 response = DEFAULT;
                 System.out.println("The user wrote an incorrect message : " + textMsg);

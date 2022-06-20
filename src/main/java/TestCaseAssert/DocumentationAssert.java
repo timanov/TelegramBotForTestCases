@@ -1,18 +1,19 @@
 package TestCaseAssert;
 
+import Controller.ControllerForCase;
+
 import java.util.ArrayList;
 
 import static Controller.ControllerForCase.DOCUMENTATIONASSERT;
+import static Controller.ControllerForCase.GENERATESTEPFORCASE;
 
 public class DocumentationAssert implements BaseAssert{
-    private final String MESSAGEGENERATETSTEP = "\n\nНажми /GenerateAssertStep для генерации шага для вставки в тест-кейс";
-    private final String MESSAGE = "\n\nНажми " + DOCUMENTATIONASSERT + " чтобы получить следующую проверку.";
     private final String ONE = "1. User story - небольшая изолированная единица функцоинальности" +
             "которую можно продемонстрировать.";
     private final String TWO = "2. User story написана в формате Как <роль пользователя>, я хочу <что-то>, " +
             "чтобы <цель>.";
     private final String THREE = "3. Ticket подходит к целям спринта.";
-    private final String FOUR = "4. Описание функциональности понятно (например, нет неизветсных терминов, сленга.";
+    private final String FOUR = "4. Описание функциональности понятно (например, нет неизвестных терминов, сленга.";
     private final String FIVE = "5. Acceptance criteria тестируемы (например, система должны работать стабильно весь год" +
             "или интерфейс должен быть удобный - не тестируемые критерии.";
     private final String SIX = "6. Функциональность не зависит от другой функциональности в спринте (лбио зависимость указана).";
@@ -26,23 +27,38 @@ public class DocumentationAssert implements BaseAssert{
     @Override
     public void fillRegister() {
         documentation = new ArrayList<>();
-        documentation.add(ONE + MESSAGE + MESSAGEGENERATETSTEP);
-        documentation.add(TWO + MESSAGE + MESSAGEGENERATETSTEP);
-        documentation.add(THREE + MESSAGE);
-        documentation.add(FOUR + MESSAGE);
-        documentation.add(FIVE + MESSAGE);
-        documentation.add(SIX + MESSAGE);
-        documentation.add(SEVEN + MESSAGE);
-        documentation.add(EIGHT + MESSAGE);
-        documentation.add(NINE + MESSAGE);
+        documentation.add(ONE);
+        documentation.add(TWO);
+        documentation.add(THREE);
+        documentation.add(FOUR);
+        documentation.add(FIVE);
+        documentation.add(SIX);
+        documentation.add(SEVEN);
+        documentation.add(EIGHT);
+        documentation.add(NINE);
     }
     @Override
     public String getAssert(){
         if (value == documentation.size()){
             value = 0;
         }
-        String result = documentation.get(value);
+        String result = documentation.get(value)
+                + ControllerForCase.message(DOCUMENTATIONASSERT)
+                + ControllerForCase.messageGeneratorStep(GENERATESTEPFORCASE);
         value++;
         return result;
     }
+
+    public String getTestStepForCase() {
+        String resultStepForCase = "Проверка:\n" + documentation.get(value - 1) + "\n\nСоздан шаг для тест-кейса: " +
+                "\n\n- Проверить содержимое User-Story, содержит роль и пользователя."
+                + "\nОжидаемый результат: Требование выполняется."
+                + ControllerForCase.message(DOCUMENTATIONASSERT);
+        return resultStepForCase;
+    }
+
+    public int getValue(){
+        return this.value;
+    }
+
 }
