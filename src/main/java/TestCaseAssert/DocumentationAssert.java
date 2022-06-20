@@ -8,7 +8,7 @@ import static Controller.ControllerForCase.DOCUMENTATIONASSERT;
 import static Controller.ControllerForCase.GENERATESTEPFORCASE;
 
 public class DocumentationAssert implements BaseAssert{
-    private final String ONE = "1. User story - небольшая изолированная единица функцоинальности" +
+    private final String ONE = "1. User story - небольшая изолированная единица функцоинальности, " +
             "которую можно продемонстрировать.";
     private final String TWO = "2. User story написана в формате Как <роль пользователя>, я хочу <что-то>, " +
             "чтобы <цель>.";
