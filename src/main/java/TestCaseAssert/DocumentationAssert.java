@@ -22,7 +22,7 @@ public class DocumentationAssert implements BaseAssert{
     private ArrayList<String> documentation;
     private int value = 0;
 
-
+    @Override
     public void fillRegister() {
         documentation = new ArrayList<>();
         documentation.add(ONE + MESSAGE);
@@ -35,7 +35,7 @@ public class DocumentationAssert implements BaseAssert{
         documentation.add(EIGHT + MESSAGE);
         documentation.add(NINE + MESSAGE);
     }
-
+    @Override
     public String getAssert(){
         if (value == documentation.size()){
             value = 0;
