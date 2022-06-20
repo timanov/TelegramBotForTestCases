@@ -17,7 +17,7 @@ public class ApiTestValue implements BaseAssert{
     private final String SEVEN = "7. Проверь граничные значения";
     private final String EIGHT = "8. Если передача binary, то передай некорректный";
     private final String NINE = "9. Проверь задержку ответа, сделай побольше и проверь, что на фронтенде";
-    private final String ONESTEPS = "Выполнить POST запрос на <api>. \n Ожидаемый результат: Ошибка 500 отсутствует";
+    private final String ONESTEPS = "Выполнить POST запрос на <url> с некорректным. \nОжидаемый результат: Ошибка 500 отсутствует.";
 
     public ArrayList<String> apiAssert;
     private int value = 0;
@@ -44,14 +44,6 @@ public class ApiTestValue implements BaseAssert{
                 + ControllerForCase.messageGeneratorStep(GENERATESTEPFORAPI);
         value++;
         return result;
-    }
-
-    public String getTestStepForCase() {
-        String resultStepForCase = "Проверка:\n" + apiAssert.get(value - 1) + "\n\nСоздан шаг для тест-кейса: " +
-                "\n\n- Проверить содержимое User-Story, содержит роль и пользователя."
-                + "\nОжидаемый результат: Требование выполняется."
-                + ControllerForCase.message(DOCUMENTATIONASSERT);
-        return resultStepForCase;
     }
 
     public int getValue(){

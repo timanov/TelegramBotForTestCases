@@ -100,7 +100,7 @@ public class Bot extends TelegramLongPollingBot {
                         e.printStackTrace();
                     }
                     response = generatorTestStep(String.valueOf(storage.apiTestValue.apiAssert.get(value - 1)),
-                            "\nпривет", ControllerForCase.message(DOCUMENTATIONASSERT));
+                            "\n" + storage.apiTestValue.getOneAssert(), ControllerForCase.message(DOCUMENTATIONASSERT));
                 }
                 break;
             default:
