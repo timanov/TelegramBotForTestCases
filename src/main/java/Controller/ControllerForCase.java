@@ -40,4 +40,17 @@ public class ControllerForCase {
         String result = "\n\nНажми " + path + " для генерации шага для вставки в тест-кейс.";
         return result;
     }
+
+    /**
+     * @param assertGet - Проверка, которую мы проверяем. (apiAssert.get(value - 1)
+     * @param assertStep - Сам шаг тест-кейса с ожидаемым результатом.
+     * @param message - Сообщение, что двигаемся дальше. (ControllerForCase.message(DOCUMENTATIONASSERT)
+     * @return Готовый тестовый шаг, который можно внедрить в тест-кейс.
+     */
+    public static String generatorTestStep(String assertGet, String assertStep, String message) {
+        String result = "Проверка:\n" + assertGet + "\nСоздан шаг для тест-кейса: "
+                + assertStep
+                + message;
+        return result;
+    }
 }
