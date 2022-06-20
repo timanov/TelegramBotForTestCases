@@ -1,4 +1,5 @@
 import Controller.ControllerForCase;
+import Feature.ParserCitaty;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -11,6 +12,7 @@ public class Bot extends TelegramLongPollingBot {
     final private String BOT_TOKEN = "5532935508:AAHYxI5beyRIaCPektSyQHReqpok6l-GncY";
     final private String BOT_NAME = "MishkaCitatyBot";
     Storage storage;
+    ParserCitaty parserCitaty;
     int value;
 
 
@@ -87,7 +89,7 @@ public class Bot extends TelegramLongPollingBot {
                 response = "Котика пока неть :c";
                 break;
             case CITATYPROGRAMMING:
-                response = "Туть будут цитаты по программированию, которые парсятся с одного сайта";
+                response = parserCitaty.getRandQuote();
                 break;
             case GENERATESTEPFORCASE:
                 if (storage.documentationAssert.getValue() == 0) {
