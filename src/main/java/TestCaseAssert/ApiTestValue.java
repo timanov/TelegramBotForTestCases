@@ -1,9 +1,13 @@
 package TestCaseAssert;
 
 
+import Controller.ControllerForCase;
+
 import java.util.ArrayList;
 
-public class ApiTestValue {
+import static Controller.ControllerForCase.*;
+
+public class ApiTestValue implements BaseAssert{
     private final String ONE = "1. Потыкай на 500 ошибки.";
     private final String TWO = "2. Укажи пустое тело";
     private final String THREE = "3. Укажи другой запрос GET вместо POST";
@@ -13,6 +17,7 @@ public class ApiTestValue {
     private final String SEVEN = "7. Проверь граничные значения";
     private final String EIGHT = "8. Если передача binary, то передай некорректный";
     private final String NINE = "9. Проверь задержку ответа, сделай побольше и проверь, что на фронтенде";
+
     private ArrayList<String> apiAssert;
     private int value = 0;
 
@@ -28,14 +33,28 @@ public class ApiTestValue {
         apiAssert.add(EIGHT);
         apiAssert.add(NINE);
     }
-
+    @Override
     public String getAssert(){
         if (value == apiAssert.size()){
             value = 0;
         }
-        String result = apiAssert.get(value);
+        String result = apiAssert.get(value)
+                + ControllerForCase.message(APIASSERT)
+                + ControllerForCase.messageGeneratorStep(GENERATESTEPFORCASE);
         value++;
         return result;
+    }
+
+    public String getTestStepForCase() {
+        String resultStepForCase = "Проверка:\n" + apiAssert.get(value - 1) + "\n\nСоздан шаг для тест-кейса: " +
+                "\n\n- Проверить содержимое User-Story, содержит роль и пользователя."
+                + "\nОжидаемый результат: Требование выполняется."
+                + ControllerForCase.message(DOCUMENTATIONASSERT);
+        return resultStepForCase;
+    }
+
+    public int getValue(){
+        return this.value;
     }
 
 

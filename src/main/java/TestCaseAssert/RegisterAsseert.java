@@ -3,7 +3,7 @@ package TestCaseAssert;
 
 import java.util.ArrayList;
 
-public class RegisterAsseert {
+public class RegisterAsseert implements BaseAssert{
     private final String ONE = "1. Проверь на максимальное кол-во символов";
     private final String TWO = "2. Заполнение логина и пароля (некорректные значения).";
     private final String THREE = "3. После нажатия на кнопку Отправить происходит отправка формы при корректном сценарии.";
@@ -13,6 +13,7 @@ public class RegisterAsseert {
     private final String SEVEN = "7. Проверка валидации обязательных полей.";
     private final String EIGHT = "8. Проверка валидации обязательных полей.";
     private ArrayList<String> register;
+
     private int value = 0;
 
     public void fillRegister() {
@@ -26,7 +27,7 @@ public class RegisterAsseert {
         register.add(SEVEN);
         register.add(EIGHT);
     }
-
+    @Override
     public String getAssert(){
         if (value == register.size()){
             value = 0;
