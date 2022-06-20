@@ -1,5 +1,4 @@
 import Controller.ControllerForCase;
-import TestCaseAssert.ApiTestValue;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -58,12 +57,16 @@ public class Bot extends TelegramLongPollingBot {
             case START:
                 response = "Привет! :)\n\n" +
                         "Получи рандомную проверку, которую можно применить для написания тестовых сценариев!\n\n " +
-                        "1. Жми " + APIASSERT + " для проверки API. \n " +
-                        "2. Жми " + REGISTERFORMASSERT + " для проверки формы регистрации. \n " +
-                        "3. Жми " + DOCUMENTATIONASSERT + " для проверки документации или технического задания\n" +
-                        "4. Жми " + AUTOTESTINFORMATION + " для получении информации по автотестам\n" +
-                        "- Жми " + INFO + " чтобы получить ссылки на полезные ресурсы для тестировщиков. \n" +
-                        "- Жми " + CAT + " для получения картинки случайного котика.";
+                        "1. Жми " + APIASSERT + " для проверки API.\n " +
+                        "2. Жми " + REGISTERFORMASSERT + " для проверки формы регистрации.\n " +
+                        "3. Жми " + DOCUMENTATIONASSERT + " для проверки документации или технического задания.\n" +
+                        "4. Жми " + AUTOTESTINFORMATION + " для получении информации по автотестам.\n"
+                        + "\n" +
+                        "Дополнительные интересные штуки для айтишника:\n"
+                        + "\n" +
+                        "- Жми " + INFO + " чтобы получить ссылки на полезные ресурсы для тестировщиков.\n" +
+                        "- Жми " + CAT + " для получения картинки случайного котика.\n" +
+                        "- Жми " + CITATYPROGRAMMING + " для получения случайно цитаты по программированию";
                 break;
             case APIASSERT:
                 response = String.valueOf(storage.apiTestValue.getAssert());
@@ -82,6 +85,9 @@ public class Bot extends TelegramLongPollingBot {
                 break;
             case CAT:
                 response = "Котика пока неть :c";
+                break;
+            case CITATYPROGRAMMING:
+                response = "Туть будут цитаты по программированию, которые парсятся с одного сайта";
                 break;
             case GENERATESTEPFORCASE:
                 if (storage.documentationAssert.getValue() == 0) {

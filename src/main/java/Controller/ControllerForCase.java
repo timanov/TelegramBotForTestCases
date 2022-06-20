@@ -16,6 +16,8 @@ public class ControllerForCase {
 
     public static final String INFO = "/Info";
 
+    public static final String CITATYPROGRAMMING = "/CitatyForProgramming";
+
     public static final String DEFAULT = "Сообщение не распознано, нажми " +
             START + " для получения начального окна.";
 
