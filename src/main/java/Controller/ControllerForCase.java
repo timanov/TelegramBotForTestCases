@@ -8,6 +8,8 @@ public class ControllerForCase {
 
     public static final String REGISTERFORMASSERT = "/RegisterFormAssert";
 
+    public static final String DOCUMENTATIONASSERT = "/DocumentationAssert";
+
     public static final String CAT = "/Cat";
 
     public static final String INFO = "/Info";

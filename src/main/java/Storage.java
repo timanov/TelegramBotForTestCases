@@ -1,16 +1,19 @@
 import TestCaseAssert.ApiTestValue;
-import TestCaseAssert.RegisterFormValue;
-
-import java.util.ArrayList;
+import TestCaseAssert.DocumentationAssert;
+import TestCaseAssert.RegisterAsseert;
 
 public class Storage {
 
-    RegisterFormValue registerFormValue = new RegisterFormValue();
+    RegisterAsseert registerAsseert = new RegisterAsseert();
     ApiTestValue apiTestValue = new ApiTestValue();
+    DocumentationAssert documentationAssert = new DocumentationAssert();
 
     Storage() {
         apiTestValue.fillApi();
-        registerFormValue.fillRegister();
+        registerAsseert.fillRegister();
+        documentationAssert.fillRegister();
 
     }
+
+
 }

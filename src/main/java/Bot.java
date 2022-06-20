@@ -51,19 +51,23 @@ public class Bot extends TelegramLongPollingBot {
         String response;
 
         switch (textMsg) {
-            case "/start":
+            case START:
                 response = "Привет! :)\n\n" +
                         "Получи рандомную проверку, которую можно применить для написания тестовых сценариев!\n\n " +
                         "1. Жми " + APIASSERT + " для проверки API. \n " +
                         "2. Жми " + REGISTERFORMASSERT + " для проверки формы регистрации. \n " +
-                        "3. Жми " + INFO + " чтобы получить ссылки на полезные ресурсы для тестировщиков. \n" +
-                        "4. Жми " + CAT + " для получения картинки случайного котика.";
+                        "3. Жми " + DOCUMENTATIONASSERT + " для проверки документации или технического задания\n" +
+                        "- Жми " + INFO + " чтобы получить ссылки на полезные ресурсы для тестировщиков. \n" +
+                        "- Жми " + CAT + " для получения картинки случайного котика.";
                 break;
             case APIASSERT:
                 response = String.valueOf(storage.apiTestValue.getAssertApi());
                 break;
             case REGISTERFORMASSERT:
-                response = String.valueOf(storage.registerFormValue.getAssertRegistration());
+                response = String.valueOf(storage.registerAsseert.getAssertRegistration());
+                break;
+            case DOCUMENTATIONASSERT:
+                response = String.valueOf(storage.documentationAssert.getAssertDocumentation());
                 break;
             case INFO:
                 response = "http://proglang.su/java/ курс по Java Core";
