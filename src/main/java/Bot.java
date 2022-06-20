@@ -1,3 +1,5 @@
+import Controller.ControllerForCase;
+import TestCaseAssert.ApiTestValue;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -10,6 +12,8 @@ public class Bot extends TelegramLongPollingBot {
     final private String BOT_TOKEN = "5532935508:AAHYxI5beyRIaCPektSyQHReqpok6l-GncY";
     final private String BOT_NAME = "MishkaCitatyBot";
     Storage storage;
+    int value;
+
 
     Bot()
     {
@@ -84,6 +88,19 @@ public class Bot extends TelegramLongPollingBot {
                     response = "Сначала укажи выберите тип проверок, нажми " + START + " чтобы попасть в главное меню.";
                 } else {
                     response = String.valueOf(storage.documentationAssert.getTestStepForCase());
+                }
+                break;
+            case GENERATESTEPFORAPI:
+                if (storage.apiTestValue.getValue() == 0) {
+                    response = "Сначала укажи выберите тип проверок, нажми " + START + " чтобы попасть в главное меню.";
+                } else {
+                    try{
+                        value = storage.apiTestValue.getValue();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    response = generatorTestStep(String.valueOf(storage.apiTestValue.apiAssert.get(value - 1)),
+                            "\nпривет", ControllerForCase.message(DOCUMENTATIONASSERT));
                 }
                 break;
             default:

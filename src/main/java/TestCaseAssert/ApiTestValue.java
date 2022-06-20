@@ -17,8 +17,9 @@ public class ApiTestValue implements BaseAssert{
     private final String SEVEN = "7. Проверь граничные значения";
     private final String EIGHT = "8. Если передача binary, то передай некорректный";
     private final String NINE = "9. Проверь задержку ответа, сделай побольше и проверь, что на фронтенде";
+    private final String ONESTEPS = "Выполнить POST запрос на <api>. \n Ожидаемый результат: Ошибка 500 отсутствует";
 
-    private ArrayList<String> apiAssert;
+    public ArrayList<String> apiAssert;
     private int value = 0;
 
     public void fillApi() {
@@ -40,7 +41,7 @@ public class ApiTestValue implements BaseAssert{
         }
         String result = apiAssert.get(value)
                 + ControllerForCase.message(APIASSERT)
-                + ControllerForCase.messageGeneratorStep(GENERATESTEPFORCASE);
+                + ControllerForCase.messageGeneratorStep(GENERATESTEPFORAPI);
         value++;
         return result;
     }
@@ -56,6 +57,8 @@ public class ApiTestValue implements BaseAssert{
     public int getValue(){
         return this.value;
     }
+
+    public String getOneAssert() { return this.ONESTEPS; }
 
 
 }

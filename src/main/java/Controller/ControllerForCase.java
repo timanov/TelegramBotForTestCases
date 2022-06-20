@@ -20,6 +20,7 @@ public class ControllerForCase {
             START + " для получения начального окна.";
 
     public static final String GENERATESTEPFORCASE = "/GenerateStepForCase";
+    public static final String GENERATESTEPFORAPI = "/GenerateStepForApiCase";
 
     /**
      *
@@ -48,7 +49,7 @@ public class ControllerForCase {
      * @return Готовый тестовый шаг, который можно внедрить в тест-кейс.
      */
     public static String generatorTestStep(String assertGet, String assertStep, String message) {
-        String result = "Проверка:\n" + assertGet + "\nСоздан шаг для тест-кейса: "
+        String result = "Проверка:\n" + assertGet + "\n\nСоздан шаг для тест-кейса:\n"
                 + assertStep
                 + message;
         return result;
