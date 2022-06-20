@@ -10,6 +10,8 @@ public class ControllerForCase {
 
     public static final String DOCUMENTATIONASSERT = "/DocumentationAssert";
 
+    public static final String AUTOTESTINFORMATION = "/InfoAutotest";
+
     public static final String CAT = "/Cat";
 
     public static final String INFO = "/Info";

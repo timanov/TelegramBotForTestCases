@@ -57,6 +57,7 @@ public class Bot extends TelegramLongPollingBot {
                         "1. Жми " + APIASSERT + " для проверки API. \n " +
                         "2. Жми " + REGISTERFORMASSERT + " для проверки формы регистрации. \n " +
                         "3. Жми " + DOCUMENTATIONASSERT + " для проверки документации или технического задания\n" +
+                        "4. Жми " + AUTOTESTINFORMATION + " для получении информации по автотестам\n" +
                         "- Жми " + INFO + " чтобы получить ссылки на полезные ресурсы для тестировщиков. \n" +
                         "- Жми " + CAT + " для получения картинки случайного котика.";
                 break;
@@ -68,6 +69,9 @@ public class Bot extends TelegramLongPollingBot {
                 break;
             case DOCUMENTATIONASSERT:
                 response = String.valueOf(storage.documentationAssert.getAssert());
+                break;
+            case AUTOTESTINFORMATION:
+                response = "Тут должна быть информация по автотестам";
                 break;
             case INFO:
                 response = "http://proglang.su/java/ курс по Java Core";
