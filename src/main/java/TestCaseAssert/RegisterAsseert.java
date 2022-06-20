@@ -27,7 +27,7 @@ public class RegisterAsseert {
         register.add(EIGHT);
     }
 
-    public String getAssertRegistration(){
+    public String getAssert(){
         if (value == register.size()){
             value = 0;
         }

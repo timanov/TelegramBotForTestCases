@@ -29,7 +29,7 @@ public class ApiTestValue {
         apiAssert.add(NINE);
     }
 
-    public String getAssertApi(){
+    public String getAssert(){
         if (value == apiAssert.size()){
             value = 0;
         }

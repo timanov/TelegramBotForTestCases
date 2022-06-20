@@ -61,13 +61,13 @@ public class Bot extends TelegramLongPollingBot {
                         "- Жми " + CAT + " для получения картинки случайного котика.";
                 break;
             case APIASSERT:
-                response = String.valueOf(storage.apiTestValue.getAssertApi());
+                response = String.valueOf(storage.apiTestValue.getAssert());
                 break;
             case REGISTERFORMASSERT:
-                response = String.valueOf(storage.registerAsseert.getAssertRegistration());
+                response = String.valueOf(storage.registerAsseert.getAssert());
                 break;
             case DOCUMENTATIONASSERT:
-                response = String.valueOf(storage.documentationAssert.getAssertDocumentation());
+                response = String.valueOf(storage.documentationAssert.getAssert());
                 break;
             case INFO:
                 response = "http://proglang.su/java/ курс по Java Core";
