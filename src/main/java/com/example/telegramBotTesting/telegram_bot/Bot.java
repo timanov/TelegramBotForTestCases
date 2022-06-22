@@ -1,14 +1,14 @@
-package com.example.telegramBotTesting;
+package com.example.telegramBotTesting.telegram_bot;
 
-import com.example.telegramBotTesting.Controller.ControllerForCase;
-import com.example.telegramBotTesting.Feature.ParserCitaty;
+import com.example.telegramBotTesting.telegram_bot.Controller.ControllerForCase;
+import com.example.telegramBotTesting.telegram_bot.Feature.ParserCitaty;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import static com.example.telegramBotTesting.Controller.ControllerForCase.*;
+import static com.example.telegramBotTesting.telegram_bot.Controller.ControllerForCase.*;
 
 public class Bot extends TelegramLongPollingBot {
     final private String BOT_TOKEN = "5532935508:AAHYxI5beyRIaCPektSyQHReqpok6l-GncY";
@@ -18,7 +18,7 @@ public class Bot extends TelegramLongPollingBot {
     int value;
 
 
-    Bot()
+    public Bot()
     {
         storage = new Storage();
     }

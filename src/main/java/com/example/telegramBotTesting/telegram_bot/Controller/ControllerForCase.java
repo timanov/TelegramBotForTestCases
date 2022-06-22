@@ -1,4 +1,4 @@
-package com.example.telegramBotTesting.Controller;
+package com.example.telegramBotTesting.telegram_bot.Controller;
 
 public class ControllerForCase {
 
@@ -34,12 +34,14 @@ public class ControllerForCase {
     public static final String GENERATESTEPFORCASE = "/GenerateStepForCase";
     public static final String GENERATESTEPFORAPI = "/GenerateStepForApiCase";
 
+    private static String result;
+
     /**
      * @param path - нужно указать функцию которая вызывается в боте(пример /api)
      * @return сообщение со следующей проверкой
      */
     public static String message(String path) {
-        String result = "\n\nНажми " + path + " чтобы получить следующую проверку.";
+        result = "\n\nНажми " + path + " чтобы получить следующую проверку.";
         return result;
     }
 
@@ -48,7 +50,7 @@ public class ControllerForCase {
      * @return сгенерированный шаг в тест-кейс
      */
     public static String messageGeneratorStep(String path) {
-        String result = "\n\nНажми " + path + " для генерации шага для вставки в тест-кейс.";
+        result = "\n\nНажми " + path + " для генерации шага для вставки в тест-кейс.";
         return result;
     }
 
@@ -59,7 +61,7 @@ public class ControllerForCase {
      * @return Готовый тестовый шаг, который можно внедрить в тест-кейс.
      */
     public static String generatorTestStep(String assertGet, String assertStep, String message) {
-        String result = "Проверка:\n" + assertGet + "\n\nСоздан шаг для тест-кейса:\n"
+        result = "Проверка:\n" + assertGet + "\n\nСоздан шаг для тест-кейса:\n"
                 + assertStep
                 + message;
         return result;

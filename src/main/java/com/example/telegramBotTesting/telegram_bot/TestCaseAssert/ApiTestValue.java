@@ -1,12 +1,12 @@
-package com.example.telegramBotTesting.TestCaseAssert;
+package com.example.telegramBotTesting.telegram_bot.TestCaseAssert;
 
 
-import com.example.telegramBotTesting.Controller.ControllerForCase;
+import com.example.telegramBotTesting.telegram_bot.Controller.ControllerForCase;
 
 import java.util.ArrayList;
 
-import static com.example.telegramBotTesting.Controller.ControllerForCase.APIASSERT;
-import static com.example.telegramBotTesting.Controller.ControllerForCase.GENERATESTEPFORAPI;
+import static com.example.telegramBotTesting.telegram_bot.Controller.ControllerForCase.APIASSERT;
+import static com.example.telegramBotTesting.telegram_bot.Controller.ControllerForCase.GENERATESTEPFORAPI;
 
 public class ApiTestValue implements BaseAssert{
 

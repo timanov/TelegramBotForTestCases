@@ -1,4 +1,4 @@
-package com.example.telegramBotTesting.TestCaseAssert;
+package com.example.telegramBotTesting.telegram_bot.TestCaseAssert;
 
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.example.telegramBotTesting.TestCaseAssert;
+package com.example.telegramBotTesting.telegram_bot.TestCaseAssert;
 
 public interface BaseAssert {
     default void fillRegister(){};

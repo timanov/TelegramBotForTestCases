@@ -1,4 +1,4 @@
-package com.example.telegramBotTesting.Feature;
+package com.example.telegramBotTesting.telegram_bot.Feature;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
