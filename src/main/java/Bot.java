@@ -71,7 +71,8 @@ public class Bot extends TelegramLongPollingBot {
                         "- Жми " + TESTINFO + " чтобы открыть меню: \"Список знаний для тестировщика\"\n" +
                         "- Жми " + INFO + " чтобы получить ссылки на полезные ресурсы для тестировщиков.\n" +
                         "- Жми " + CAT + " для получения картинки случайного котика.\n" +
-                        "- Жми " + CITATYPROGRAMMING + " для получения случайно цитаты по программированию";
+                        "- Жми " + CITATYPROGRAMMING + " для получения случайно цитаты по программированию" +
+                        "- Жми " + VICTORINATESTING + " чтобы поиграть в викторину по тестированию";
                 break;
             case APIASSERT:
                 response = String.valueOf(storage.apiTestValue.getAssert());
@@ -101,6 +102,10 @@ public class Bot extends TelegramLongPollingBot {
                 break;
             case CITATYPROGRAMMING:
                 response = parserCitaty.getRandQuote();
+                break;
+            case VICTORINATESTING:
+                response = "Туть будет викторина. Нужно будет выбрать ответ, если всё ок - записывается 1 балл." +
+                           "Можно сделать тоже самое и для программирования, будет очень прикольно. Рандомная задача будет";
                 break;
             case GENERATESTEPFORCASE:
                 if (storage.documentationAssert.getValue() == 0) {
