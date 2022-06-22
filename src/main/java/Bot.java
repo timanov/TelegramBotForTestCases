@@ -56,15 +56,16 @@ public class Bot extends TelegramLongPollingBot {
         String response;
 
         switch (textMsg) {
-            case START: case MENU:
+            case START: case MENU: case "/Net":
                 response = "Привет! :)\n\n" +
                         "Бот был создан для полезной информации для тестировщиков в своей сфере, " +
                         "чтобы находить больше полезных дефектов и приносить пользу команде\n\n" +
                         "Получи рандомную проверку, которую можно применить для написания тестовых сценариев!\n\n " +
-                        "1. Жми " + APIASSERT + " для проверки API.\n " +
-                        "2. Жми " + REGISTERFORMASSERT + " для проверки формы регистрации.\n " +
-                        "3. Жми " + DOCUMENTATIONASSERT + " для проверки документации или технического задания.\n" +
-                        "4. Жми " + AUTOTESTINFORMATION + " для получении информации по автотестам.\n"
+                        "1. Жми " + APIASSERT + " для идей проверки API.\n " +
+                        "2. Жми " + REGISTERFORMASSERT + " для идей проверки формы регистрации.\n " +
+                        "3. Жми " + DOCUMENTATIONASSERT + " для идеи проверки документации.\n" +
+                        "4. Жми " + AUTOTESTINFORMATION + " для идеи проверки автотестов.\n" +
+                        "5. Жми " + JAVAINFORMATIONCORE + " для тем по Java Core.\n"
                         + "\n" +
                         "Дополнительные интересные штуки для айтишника:\n"
                         + "\n" +
@@ -94,6 +95,11 @@ public class Bot extends TelegramLongPollingBot {
                            "5. Самые частые дефекты в Backend.\n" +
                            "6. Нажать на " + MENU + "чтобы вернуться в главное меню";
                 break;
+            case JAVAINFORMATIONCORE:
+                response = "1. Наследование. \n" +
+                           "2. Инкапсуляция. \n" +
+                           "3. Полиморфизм. ";
+                break;
             case INFO:
                 response = "http://proglang.su/java/ курс по Java Core";
                 break;
@@ -105,7 +111,8 @@ public class Bot extends TelegramLongPollingBot {
                 break;
             case VICTORINATESTING:
                 response = "Туть будет викторина. Нужно будет выбрать ответ, если всё ок - записывается 1 балл." +
-                           "Можно сделать тоже самое и для программирования, будет очень прикольно. Рандомная задача будет";
+                           "Можно сделать тоже самое и для программирования, будет очень прикольно. Рандомная задача будет." +
+                           "\n\nИграем? Жми /DA если Да, /NET - возрат в главное меню";
                 break;
             case GENERATESTEPFORCASE:
                 if (storage.documentationAssert.getValue() == 0) {

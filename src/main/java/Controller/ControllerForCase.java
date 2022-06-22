@@ -14,6 +14,8 @@ public class ControllerForCase {
 
     public static final String AUTOTESTINFORMATION = "/InfoAutotest";
 
+    public static final String JAVAINFORMATIONCORE = "/JavaInformationCore";
+
     public static final String VICTORINATESTING = "/VictorinaTesting";
 
     public static final String CAT = "/Cat";
@@ -31,7 +33,6 @@ public class ControllerForCase {
     public static final String GENERATESTEPFORAPI = "/GenerateStepForApiCase";
 
     /**
-     *
      * @param path - нужно указать функцию которая вызывается в боте(пример /api)
      * @return сообщение со следующей проверкой
      */
@@ -41,7 +42,6 @@ public class ControllerForCase {
     }
 
     /**
-     *
      * @param path - нужно указать функцию которая вызывается в боте(пример /api)
      * @return сгенерированный шаг в тест-кейс
      */
@@ -51,9 +51,9 @@ public class ControllerForCase {
     }
 
     /**
-     * @param assertGet - Проверка, которую мы проверяем. (apiAssert.get(value - 1)
+     * @param assertGet  - Проверка, которую мы проверяем. (apiAssert.get(value - 1)
      * @param assertStep - Сам шаг тест-кейса с ожидаемым результатом.
-     * @param message - Сообщение, что двигаемся дальше. (ControllerForCase.message(DOCUMENTATIONASSERT)
+     * @param message    - Сообщение, что двигаемся дальше. (ControllerForCase.message(DOCUMENTATIONASSERT)
      * @return Готовый тестовый шаг, который можно внедрить в тест-кейс.
      */
     public static String generatorTestStep(String assertGet, String assertStep, String message) {
