@@ -4,6 +4,8 @@ public class ControllerForCase {
 
     public static final String START = "/start";
 
+    public static final String MENU = "/menu";
+
     public static final String APIASSERT = "/ApiAssert";
 
     public static final String REGISTERFORMASSERT = "/RegisterFormAssert";
@@ -16,10 +18,12 @@ public class ControllerForCase {
 
     public static final String INFO = "/Info";
 
+    public static final String TESTINFO = "/TestInfo";
+
     public static final String CITATYPROGRAMMING = "/CitatyForProgramming";
 
     public static final String DEFAULT = "Сообщение не распознано, нажми " +
-            START + " для получения начального окна.";
+            MENU + " для получения начального окна.";
 
     public static final String GENERATESTEPFORCASE = "/GenerateStepForCase";
     public static final String GENERATESTEPFORAPI = "/GenerateStepForApiCase";

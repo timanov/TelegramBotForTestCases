@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import static Controller.ControllerForCase.*;
 
 public class ApiTestValue implements BaseAssert{
+
     private final String ONE = "1. Потыкай на 500 ошибки.";
     private final String TWO = "2. Укажи пустое тело";
     private final String THREE = "3. Укажи другой запрос GET вместо POST";
@@ -19,7 +20,7 @@ public class ApiTestValue implements BaseAssert{
     private final String NINE = "9. Проверь задержку ответа, сделай побольше и проверь, что на фронтенде";
     private final String ONESTEPS = "Выполнить POST запрос на <url> с некорректным. \nОжидаемый результат: Ошибка 500 отсутствует.";
 
-    public ArrayList<String> apiAssert;
+    private ArrayList<String> apiAssert;
     private int value = 0;
 
     public void fillApi() {
@@ -52,5 +53,6 @@ public class ApiTestValue implements BaseAssert{
 
     public String getOneAssert() { return this.ONESTEPS; }
 
+    public ArrayList getArray() { return this.apiAssert; }
 
 }
