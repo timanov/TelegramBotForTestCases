@@ -1,12 +1,14 @@
-import Controller.ControllerForCase;
-import Feature.ParserCitaty;
+package com.example.telegramBotTesting;
+
+import com.example.telegramBotTesting.Controller.ControllerForCase;
+import com.example.telegramBotTesting.Feature.ParserCitaty;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import static Controller.ControllerForCase.*;
+import static com.example.telegramBotTesting.Controller.ControllerForCase.*;
 
 public class Bot extends TelegramLongPollingBot {
     final private String BOT_TOKEN = "5532935508:AAHYxI5beyRIaCPektSyQHReqpok6l-GncY";
@@ -73,7 +75,11 @@ public class Bot extends TelegramLongPollingBot {
                         "- Жми " + INFO + " чтобы получить ссылки на полезные ресурсы для тестировщиков.\n" +
                         "- Жми " + CAT + " для получения картинки случайного котика.\n" +
                         "- Жми " + CITATYPROGRAMMING + " для получения случайно цитаты по программированию" +
-                        "- Жми " + VICTORINATESTING + " чтобы поиграть в викторину по тестированию";
+                        "- Жми " + VICTORINATESTING + " чтобы поиграть в викторину по тестированию" +
+                        "- Жми " + APILINK + " чтобы получить API для взаимодействия с ботом";
+                break;
+            case APILINK:
+                response = "http://localhost:8000/api/hello";
                 break;
             case APIASSERT:
                 response = String.valueOf(storage.apiTestValue.getAssert());

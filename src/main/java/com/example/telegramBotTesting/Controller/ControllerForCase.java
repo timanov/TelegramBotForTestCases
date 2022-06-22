@@ -1,6 +1,8 @@
-package Controller;
+package com.example.telegramBotTesting.Controller;
 
 public class ControllerForCase {
+
+    public static final String APILINK = "/ApiLink";
 
     public static final String START = "/start";
 

@@ -1,11 +1,11 @@
-package TestCaseAssert;
+package com.example.telegramBotTesting.TestCaseAssert;
 
-import Controller.ControllerForCase;
+import com.example.telegramBotTesting.Controller.ControllerForCase;
 
 import java.util.ArrayList;
 
-import static Controller.ControllerForCase.DOCUMENTATIONASSERT;
-import static Controller.ControllerForCase.GENERATESTEPFORCASE;
+import static com.example.telegramBotTesting.Controller.ControllerForCase.DOCUMENTATIONASSERT;
+import static com.example.telegramBotTesting.Controller.ControllerForCase.GENERATESTEPFORCASE;
 
 public class DocumentationAssert implements BaseAssert{
     private final String ONE = "1. User story - небольшая изолированная единица функцоинальности, " +
