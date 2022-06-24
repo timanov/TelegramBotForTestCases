@@ -2,7 +2,6 @@ package com.example.telegramBotTesting.api.controller;
 
 import com.example.telegramBotTesting.api.model.Client;
 import com.example.telegramBotTesting.api.model.Testing;
-import com.example.telegramBotTesting.telegram_bot.Storage;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
@@ -21,7 +20,7 @@ public class ClientController {
                 String.format(template, client));
     }
 
-    @RequestMapping("/testing/iformation")
+    @RequestMapping("/api/hello")
     public Testing testing(@RequestParam(value="name", required = false, defaultValue = "World") String testing) {
         return new Testing(counter.incrementAndGet(),
                 String.format(template, testingMessage));
