@@ -2,6 +2,7 @@ package com.example.telegramBotTesting.telegram_bot.TestCaseAssert;
 
 
 import com.example.telegramBotTesting.telegram_bot.Controller.ControllerForCase;
+import lombok.Getter;
 
 import java.util.ArrayList;
 
@@ -21,7 +22,10 @@ public class ApiTestValue implements BaseAssert{
     private final String NINE = "9. Проверь задержку ответа, сделай побольше и проверь, что на фронтенде";
     private final String ONESTEPS = "Выполнить POST запрос на <url> с некорректным. \nОжидаемый результат: Ошибка 500 отсутствует.";
 
+    @Getter
     private ArrayList<String> apiAssert;
+
+    @Getter
     private int value = 0;
 
     public void fillApi() {
@@ -48,12 +52,6 @@ public class ApiTestValue implements BaseAssert{
         return result;
     }
 
-    public int getValue(){
-        return this.value;
-    }
-
     public String getOneAssert() { return this.ONESTEPS; }
-
-    public ArrayList getArray() { return this.apiAssert; }
 
 }

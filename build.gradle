@@ -25,6 +25,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.telegram:telegrambots:5.3.0'
 	implementation 'org.jsoup:jsoup:1.14.3'
+	compileOnly 'org.projectlombok:lombok:1.18.22'
 }
 
 tasks.named('test') {

@@ -1,6 +1,7 @@
 package com.example.telegramBotTesting.telegram_bot.TestCaseAssert;
 
 import com.example.telegramBotTesting.telegram_bot.Controller.ControllerForCase;
+import lombok.Getter;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,8 @@ public class DocumentationAssert implements BaseAssert{
     private final String NINE = "9. Новый функционал не противоречит, согласуется с существующим ранее.";
 
     private ArrayList<String> documentation;
+
+    @Getter
     private int value = 0;
 
     @Override
@@ -55,10 +58,6 @@ public class DocumentationAssert implements BaseAssert{
                 + "\nОжидаемый результат: Требование выполняется."
                 + ControllerForCase.message(DOCUMENTATIONASSERT);
         return resultStepForCase;
-    }
-
-    public int getValue(){
-        return this.value;
     }
 
 }

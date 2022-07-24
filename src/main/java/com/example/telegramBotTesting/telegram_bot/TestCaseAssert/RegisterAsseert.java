@@ -1,6 +1,8 @@
 package com.example.telegramBotTesting.telegram_bot.TestCaseAssert;
 
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 
 public class RegisterAsseert implements BaseAssert{
@@ -14,6 +16,7 @@ public class RegisterAsseert implements BaseAssert{
     private final String EIGHT = "8. Проверка валидации обязательных полей.";
     private ArrayList<String> register;
 
+    @Getter
     private int value = 0;
 
     public void fillRegister() {

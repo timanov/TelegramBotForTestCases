@@ -1,8 +1,14 @@
 package com.example.telegramBotTesting.api.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class Client {
 
+    @Getter
     private final long id;
+
+    @Getter
     private final String content;
 
     public Client (long id, String content) {
@@ -10,12 +16,5 @@ public class Client {
         this.content = content;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getContent() {
-        return content;
-    }
 
 }
