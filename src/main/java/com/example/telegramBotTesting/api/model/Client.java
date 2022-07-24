@@ -1,7 +1,6 @@
 package com.example.telegramBotTesting.api.model;
 
 import lombok.Getter;
-import lombok.Setter;
 
 public class Client {
 
